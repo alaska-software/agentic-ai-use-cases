@@ -1,0 +1,18 @@
+# Secrets
+.env
+
+# Compiled binaries
+*.exe
+*.dll
+
+# Xbase++ intermediate/build artifacts
+.debug/
+.release/
+/run/
+*.obj
+*.err
+*.ppo
+*.rwl
+*.map
+*.pdb
+*.bak
