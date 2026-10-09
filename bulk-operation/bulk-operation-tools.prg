@@ -182,7 +182,6 @@ STATIC FUNCTION BulkFormatFieldValue( xVal )
    CASE cType == "M"
       cMemo := AllTrim( xVal )
       nMemo := Val( cMemo )
-      // $FIXME
       IF nMemo != 0
          RETURN nMemo
       ENDIF
