@@ -48,7 +48,6 @@
 ///
 //////////////////////////////////////////////////////////////////////
 
-#include "..\agentic-ai-core.ch"
 #include "common.ch"
 #include "dac.ch"
 #include "pgdbe.ch"

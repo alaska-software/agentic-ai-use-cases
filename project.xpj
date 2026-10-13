@@ -6,7 +6,7 @@
     RUNENV.FILE = .env
     AUX.FILE = readme.md
     
-[Project.xpj]
+[project.xpj]
     ap-invoice\ap-invoice-agent.exe
     bulk-operation\bulk-operation.exe
 
@@ -22,6 +22,8 @@
     INTERMEDIATE_DEBUG   = .debug
     INTERMEDIATE_RELEASE = .release
     TARGET_DIR           = .\.
+    DEPENDS_ON           = $(ASSETS_PATH)\agentic-ai-core
+    DEPENDS_ON           = $(ASSETS_PATH)\http-streams
 // $START-AUTODEPEND
     ap-invoice-agent-common.obj
     ap-invoice-agent.obj
@@ -45,6 +47,8 @@
     INTERMEDIATE_DEBUG   = .debug
     INTERMEDIATE_RELEASE = .release
     TARGET_DIR           = .\.
+    DEPENDS_ON           = $(ASSETS_PATH)\agentic-ai-core
+    DEPENDS_ON           = $(ASSETS_PATH)\http-streams
 // $START-AUTODEPEND
 // $STOP-AUTODEPEND
     bulk-operation-main.prg
