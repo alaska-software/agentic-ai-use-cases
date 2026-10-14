@@ -24,6 +24,7 @@
     TARGET_DIR           = .\.
     DEPENDS_ON           = $(ASSETS_PATH)\agentic-ai-core
     DEPENDS_ON           = $(ASSETS_PATH)\http-streams
+    DEPENDS_ON           = $(ASSETS_PATH)\libcurl-wrapper
 // $START-AUTODEPEND
     ap-invoice-agent-common.obj
     ap-invoice-agent.obj
@@ -49,6 +50,7 @@
     TARGET_DIR           = .\.
     DEPENDS_ON           = $(ASSETS_PATH)\agentic-ai-core
     DEPENDS_ON           = $(ASSETS_PATH)\http-streams
+    DEPENDS_ON           = $(ASSETS_PATH)\libcurl-wrapper
 // $START-AUTODEPEND
 // $STOP-AUTODEPEND
     bulk-operation-main.prg
