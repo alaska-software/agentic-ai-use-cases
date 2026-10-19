@@ -60,5 +60,6 @@
     bulk-operation-agent-tour.md
     bulk-operation-tasks-en.config
     bulk-operation-tasks-de.config
+    data\northwind.postgresql.sql
 
 

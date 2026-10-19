@@ -111,19 +111,26 @@ and it is git-ignored so your keys stay local. You can also supply a key
 programmatically on the LLM options for a single call or agent, e.g.
 `LLMOptions():withModel( MistralModels():MISTRAL_LARGE ):withApiKey( cMyKey )`.
 
-## LLM / AI Model Usage
-
-- `ap-invoice-agent.exe` extracts invoice fields with **Mistral** (`MISTRAL_API_KEY`).
-- `bulk-operation.exe` classifies, analyzes, and critiques with **Anthropic Claude**
-  (`ANTHROPIC_API_KEY`) — a fast Haiku model for classification/merging, Sonnet for
-  analysis and the critics.
-
-Check the header comment of each `*-main.prg` for the exact requirement. By default,
-the Agentic AI Core framework resolves every LLM call through the Alaska Software LLM
-Router when the matching provider key is not set, so both executables run without any
-configuration. Whichever LLM call fails — wrong key, no network, rate limit — every
+`ap-invoice-agent.exe` extracts invoice fields with **Mistral** (`MISTRAL_API_KEY`),
+and `bulk-operation.exe` classifies, analyzes, and critiques with **Anthropic Claude**
+(`ANTHROPIC_API_KEY`) — check the header comment of each `*-main.prg` for the exact
+requirement. Whichever LLM call fails — wrong key, no network, rate limit — every
 sample catches the error with `BEGIN SEQUENCE … RECOVER USING oError`, prints a clean
 message, and continues with the next invoice or task instead of aborting the whole run.
+
+A quick way to set the variable(s) for the current command window is a small batch
+file, sourced with `call` before running an example — this is also what the code tours
+assume when they say `call apikey.bat`:
+
+```bat
+@echo off
+rem apikey.bat - put your own key(s) here, then run: call apikey.bat
+set MISTRAL_API_KEY=<put-your-mistral-api-key-here>
+set ANTHROPIC_API_KEY=<put-your-anthropic-api-key-here>
+set OPENAI_API_KEY=<put-your-openai-api-key-here>
+```
+
+`apikey.bat` is git-ignored, so it is safe to keep your real keys in it locally.
 
 ## Code Tours
 
