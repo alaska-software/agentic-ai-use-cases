@@ -3,7 +3,7 @@
     TARGET_DIR = .\run
     Version = 3.0
     Project.xpj
-    RUNENV.FILE = .env
+    //RUNENV.FILE = .env
     AUX.FILE = readme.md
     
 [project.xpj]

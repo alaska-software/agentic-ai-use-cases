@@ -96,9 +96,25 @@ no other change needed, the agent detects the request language and replies in ki
 bulk-operation.exe bulk-operation-tasks-de.config
 ```
 
-Both drivers isolate every sample in its own `BEGIN SEQUENCE … RECOVER USING oError`,
-so one failed LLM call or database error is reported cleanly without aborting the
-rest of the run.
+> **`bulk-operation.exe` needs a database.** This example connects to a PostgreSQL
+> server (`SERVER=localhost;DB=northwind;UID=postgres;PWD=postgres` - see `cConnect` at
+> the top of `bulk-operation-main.prg` if your server uses different credentials) and
+> expects the Northwind sample data to already be loaded there. Before running it, load
+> `data\northwind.postgresql.sql` into a `northwind` database on your PostgreSQL server:
+>
+> ```bat
+> createdb -U postgres northwind
+> psql -U postgres -d northwind -f data\northwind.postgresql.sql
+> ```
+>
+> Adjust `-U` (and add `-h`/`-p` as needed) to match your PostgreSQL setup.
+>
+> Prefer a GUI? In **pgAdmin**, create the `northwind` database (right-click
+> **Databases → Create → Database…**), then select it, open
+> **Tools → Query Tool**, use its **Open File** button to load
+> `data\northwind.postgresql.sql`, and click **Execute/Run (F5)** to run the whole
+> script against it.
+
 
 **3. (Optional) Use your own API key**
 
